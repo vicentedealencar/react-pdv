@@ -1,6 +1,6 @@
 {
   "name": "react-pdv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,8 @@
     "type": "git",
     "url": "https://github.com/vicentedealencar/react-pdv.git"
   },
-  "peerDependencies": {},
-  "dependencies": {
-    "react": "^15"
-  }
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {}
 }
