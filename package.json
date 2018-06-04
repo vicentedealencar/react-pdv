@@ -1,11 +1,14 @@
 {
   "name": "react-pdv",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel ./src -d dist",
-    "prepublish": "npm -s run build",
+    "start": "yarn build:dev",
+    "build": "babel ./src -d dist",
+    "build:dev": "cross-env NODE_ENV=development yarn build --watch",
+    "build:prod": "cross-env NODE_ENV=production yarn build",
+    "prepublish": "npm -s run build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
