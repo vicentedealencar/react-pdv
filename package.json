@@ -4,11 +4,12 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "yarn build:dev",
+    "start": "cross-env NODE_ENV=development kit examples --mode library",
     "build": "babel ./src -d dist",
     "build:dev": "cross-env NODE_ENV=development yarn build --watch",
     "build:prod": "cross-env NODE_ENV=production yarn build",
     "prepublish": "npm -s run build:prod",
+    "prettify": "prettier --write **/*.js !**/dist/**",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -23,14 +24,23 @@
       "react-app"
     ]
   },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "semi": false
+  },
   "peerDependencies": {
     "react": "*"
   },
   "devDependencies": {
+    "@compositor/kit-cli": "^1.0.37",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.1",
     "cross-env": "^5.1.6",
+    "prettier": "^1.13.4",
     "react": "^16.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "invariant": "^2.2.4"
+  }
 }
