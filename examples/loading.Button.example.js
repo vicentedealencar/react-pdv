@@ -1,37 +1,30 @@
 import React from 'react'
 import { Button } from '../src'
+import { State } from '@compositor/kit'
 
-export default class extends React.Component {
-  state = {
-    loading: false
-  }
-
-  showAlert() {
-    this.setState({ loading: false })
+const onClick = update => () => {
+  update({ loading: true })
+  setTimeout(() => {
+    update({ loading: false })
     alert('🎉🎉🎉')
-  }
+  }, 1500)
+}
 
-  onClick = () => {
-    this.setState({ loading: true })
-    setTimeout(() => this.showAlert(), 3000)
-  }
-
-  render() {
-    const { loading } = this.state
-    const style = loading ? disabledStyle : regularStyle
-
-    return (
+export default () => (
+  <State
+    loading={false}
+    render={({ update, loading }) => (
       <Button
         button="button"
-        onClick={this.onClick}
+        onClick={onClick(update)}
         loading={loading}
-        style={style}
+        style={loading ? disabledStyle : regularStyle}
       >
         {loading ? 'Loading...' : 'With timeout'}
       </Button>
-    )
-  }
-}
+    )}
+  />
+)
 
 const regularStyle = {
   backgroundColor: '#770077',
