@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicButton renders 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#770077",
+      "border": "5px solid black",
+      "borderRadius": 20,
+      "color": "#fff",
+      "paddingBottom": 10,
+      "paddingLeft": 100,
+      "paddingRight": 100,
+      "paddingTop": 10,
+    }
+  }
+>
+  I am a button, please click me
+</button>
+`;
+
+exports[`LoadingButton renders 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#770077",
+      "border": "5px solid black",
+      "borderRadius": 20,
+      "color": "#fff",
+      "paddingBottom": 10,
+      "paddingLeft": 100,
+      "paddingRight": 100,
+      "paddingTop": 10,
+    }
+  }
+>
+  With timeout
+</button>
+`;
