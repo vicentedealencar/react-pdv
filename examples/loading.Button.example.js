@@ -1,26 +1,25 @@
 import React from 'react'
 import { Button } from '../src'
 import { State } from '@compositor/kit'
-
-const onClick = update => () => {
+const onClick = (update, i) => () => {
   update({ loading: true })
   setTimeout(() => {
-    update({ loading: false })
-    alert('🎉🎉🎉')
-  }, 1500)
+    update({ loading: false, i: i + 1 })
+  }, 1000)
 }
 
 export default () => (
   <State
     loading={false}
-    render={({ update, loading }) => (
+    i={0}
+    render={({ update, loading, i }) => (
       <Button
         button="button"
-        onClick={onClick(update)}
+        onClick={onClick(update, i)}
         loading={loading}
         style={loading ? disabledStyle : regularStyle}
       >
-        {loading ? 'Loading...' : 'With timeout'}
+        {loading ? 'Loading...' : 'Delayed counter: ' + i}
       </Button>
     )}
   />
@@ -31,8 +30,8 @@ const regularStyle = {
   color: '#fff',
   paddingTop: 10,
   paddingBottom: 10,
-  paddingRight: 100,
-  paddingLeft: 100,
+  width: 300,
+  textAlign: 'center',
   border: '5px solid black',
   borderRadius: 20
 }
