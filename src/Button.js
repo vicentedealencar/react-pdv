@@ -1,7 +1,7 @@
 import React from 'react'
 import invariant from 'invariant'
 
-export class Button extends React.Component {
+export default class Button extends React.PureComponent {
   render() {
     const { button: B, loading, disabled, ...otherProps } = this.props
 
@@ -13,5 +13,3 @@ export class Button extends React.Component {
     )
   }
 }
-
-export default Button
