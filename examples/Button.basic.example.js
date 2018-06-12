@@ -4,7 +4,7 @@ import { Button } from '../src'
 const onClick = () => alert('🎉🎉🎉')
 
 export default props => (
-  <Button button="button" style={style} onClick={onClick}>
+  <Button component="button" style={style} onClick={onClick}>
     I am a button, please click me
   </Button>
 )

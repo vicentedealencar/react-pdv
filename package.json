@@ -4,14 +4,18 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development kit examples --mode library",
-    "build": "babel ./src -d dist",
-    "build:dev": "cross-env NODE_ENV=development yarn build --watch",
-    "build:prod": "cross-env NODE_ENV=production yarn build",
-    "prepublish": "npm-run-all format-then-test build:prod",
+    "start": "npm-run-all --parallel start:*",
+    "start:examples": "cross-env NODE_ENV=development kit examples --mode library --port 5757 --open",
+    "start:test": "jest --watch",
+    "build": "yarn build:prod",
+    "build:babel": "babel ./src -d dist",
+    "build:dev": "cross-env NODE_ENV=development yarn build:babel --watch",
+    "build:prod": "cross-env NODE_ENV=production yarn build:babel",
+    "prepublish": "npm-run-all --serial pre-commit build:prod",
     "format": "prettier-eslint --write **/*.js !**/dist/**",
     "test": "jest",
-    "format-then-test": "npm-run-all format test"
+    "test:bail": "jest --bail --colors",
+    "pre-commit": "npm-run-all --serial format test:bail"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format-then-test"
+      "pre-commit": "yarn pre-commit"
     }
   },
   "babel": {

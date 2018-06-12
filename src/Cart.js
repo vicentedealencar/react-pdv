@@ -1,5 +1,6 @@
 import React from 'react'
 import invariant from 'invariant'
+import Button from './Button'
 
 const Stringify = ({ product, Text }) => (
   <Text>{JSON.stringify(product, null, 2)}</Text>
@@ -18,6 +19,7 @@ const formatPrice = x => parseFloat(x).toFixed(2)
 const createSumReducer = (selector = identity) => (acc, curr) =>
   acc + selector(curr)
 const totalPriceReducer = createSumReducer(x => x.price)
+const onContinue = () => alert('🎉🎉🎉')
 
 export default class Cart extends React.PureComponent {
   render() {
@@ -69,6 +71,9 @@ export default class Cart extends React.PureComponent {
             <View style={styles.cartItems}>{cartItems}</View>
           </Container>
         )}
+        <Button component="button" style={style} onClick={onContinue}>
+          Continue
+        </Button>
       </View>
     )
   }

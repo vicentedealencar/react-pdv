@@ -14,7 +14,7 @@ export default () => (
     i={0}
     render={({ update, loading, i }) => (
       <Button
-        button="button"
+        component="button"
         onClick={onClick(update, i)}
         loading={loading}
         style={loading ? disabledStyle : regularStyle}
