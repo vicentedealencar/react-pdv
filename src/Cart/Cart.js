@@ -1,18 +1,6 @@
 import React from 'react'
-import invariant from 'invariant'
-import Button from './Button'
-
-const Stringify = ({ product, Text }) => (
-  <Text>{JSON.stringify(product, null, 2)}</Text>
-)
-
-const DefaultCartItem = ({ product, Text, View }) => (
-  <View>
-    <Text>
-      {product.name} - {product.price}
-    </Text>
-  </View>
-)
+import Button from '../Button'
+import { default as DefaultCartItem } from './CartItem'
 
 const identity = x => x
 const formatPrice = x => parseFloat(x).toFixed(2)
@@ -22,12 +10,19 @@ const totalPriceReducer = createSumReducer(x => x.price)
 const onContinue = () => alert('🎉🎉🎉')
 
 export default class Cart extends React.PureComponent {
+  state = {
+    items: {}
+  }
+
+  updateCartItem = item =>
+    this.setState(state => ({ items: { ...state.items, [item.id]: item } }))
+
   render() {
     const {
-      View,
-      Container,
-      Text,
-      CartItem: propsCartItem,
+      View = 'div',
+      Container = 'div',
+      Text = 'p',
+      CartItem = DefaultCartItem,
       empty,
       cart,
       loading,
@@ -35,20 +30,20 @@ export default class Cart extends React.PureComponent {
       style,
       ...otherProps
     } = this.props
-    const CartItem = propsCartItem || DefaultCartItem
-
-    invariant(
-      View && Container && Text && CartItem,
-      'Cart expect a Component as a prop called button'
-    )
 
     const total =
       cart && cart.items ? cart.items.reduce(totalPriceReducer, 0) : 0
     const cartItems =
       cart &&
       cart.items &&
-      cart.items.map((product, index) => (
-        <CartItem key={index} product={product} Text={Text} View={View} />
+      cart.items.map((item, i) => (
+        <CartItem
+          key={i}
+          item={this.state.items[item.id] || item}
+          Text={Text}
+          View={View}
+          updateCartItem={this.updateCartItem}
+        />
       ))
 
     if (loading) {
@@ -57,6 +52,7 @@ export default class Cart extends React.PureComponent {
 
     return (
       <View
+        {...otherProps}
         style={[
           styles.cartContainer,
           { backgroundColor: empty ? '#ffffff' : '#ebebef' },

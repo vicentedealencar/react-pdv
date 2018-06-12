@@ -71,6 +71,23 @@ exports[`Cart renders 1`] = `
            - 
           123.45
         </p>
+        <p>
+          lorem ipsum dolor flanders
+        </p>
+        <button
+          disabled={false}
+          onClick={[Function]}
+        >
+          -
+        </button>
+        <p>
+          1
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          +
+        </button>
       </div>
       <div>
         <p>
@@ -78,6 +95,23 @@ exports[`Cart renders 1`] = `
            - 
           678.9
         </p>
+        <p>
+          lorem ipsum dolor flanders
+        </p>
+        <button
+          disabled={false}
+          onClick={[Function]}
+        >
+          -
+        </button>
+        <p>
+          2
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          +
+        </button>
       </div>
     </div>
   </div>

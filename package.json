@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel start:*",
     "start:examples": "cross-env NODE_ENV=development kit examples --mode library --port 5757 --open",
-    "start:test": "jest --watch",
+    "start:test": "jest --watch --notify",
     "build": "yarn build:prod",
     "build:babel": "babel ./src -d dist",
     "build:dev": "cross-env NODE_ENV=development yarn build:babel --watch",

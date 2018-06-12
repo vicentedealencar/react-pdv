@@ -4,27 +4,23 @@ import { Cart } from '../src'
 const cart = {
   items: [
     {
+      id: 'prod1',
       name: 'prod1',
+      description: 'lorem ipsum dolor flanders',
+      amount: 1,
       price: 123.45
     },
     {
+      id: 'prod2',
       name: 'prod2',
+      description: 'lorem ipsum dolor flanders',
+      amount: 2,
       price: 678.9
     }
   ]
 }
 
-export default props => (
-  <Cart
-    View={'div'}
-    Container={'div'}
-    Text={'p'}
-    CartItem={null}
-    empty={false}
-    cart={cart}
-    style={style}
-  />
-)
+export default props => <Cart empty={false} cart={cart} style={style} />
 
 const style = {
   backgroundColor: '#770000',
