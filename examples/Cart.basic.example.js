@@ -23,9 +23,7 @@ export default props => (
     empty={false}
     cart={cart}
     style={style}
-  >
-    I am a button, please click me
-  </Cart>
+  />
 )
 
 const style = {

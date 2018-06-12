@@ -20,6 +20,70 @@ exports[`BasicButton renders 1`] = `
 </button>
 `;
 
+exports[`Cart renders 1`] = `
+<div
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "#ebebef",
+      },
+      Object {
+        "backgroundColor": "#770000",
+        "border": "5px solid black",
+        "borderRadius": 20,
+        "color": "#fff",
+        "paddingBottom": 10,
+        "paddingLeft": 100,
+        "paddingRight": 100,
+        "paddingTop": 10,
+      },
+    ]
+  }
+>
+  <div>
+    <p
+      style={
+        Object {
+          "alignSelf": "center",
+          "fontSize": 28,
+          "fontWeight": "900",
+          "marginBottom": 30,
+          "marginTop": 30,
+        }
+      }
+    >
+      Total: 802.35
+    </p>
+    <div
+      style={
+        Object {
+          "borderBottomWidth": 4.5,
+          "borderColor": "#d6d7da",
+        }
+      }
+    >
+      <div>
+        <p>
+          prod1
+           - 
+          123.45
+        </p>
+      </div>
+      <div>
+        <p>
+          prod2
+           - 
+          678.9
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`LoadingButton renders 1`] = `
 <button
   onClick={[Function]}

@@ -8,9 +8,10 @@
     "build": "babel ./src -d dist",
     "build:dev": "cross-env NODE_ENV=development yarn build --watch",
     "build:prod": "cross-env NODE_ENV=production yarn build",
-    "prepublish": "npm -s run build:prod",
-    "prettify": "prettier --write **/*.js !**/dist/**",
-    "test": "jest"
+    "prepublish": "npm-run-all format-then-test build:prod",
+    "format": "prettier-eslint --write **/*.js !**/dist/**",
+    "test": "jest",
+    "format-then-test": "npm-run-all format test"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vicentedealencar/react-pdv.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format-then-test"
+    }
   },
   "babel": {
     "presets": [
@@ -36,10 +42,16 @@
     "@compositor/kit-cli": "^1.0.37",
     "@compositor/kit-snapshot": "^1.0.24",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-preset-react-app": "^3.1.1",
     "cross-env": "^5.1.6",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-react": "^7.9.1",
+    "husky": "^1.0.0-rc.8",
     "jest": "^23.1.0",
-    "prettier": "^1.13.4",
+    "npm-run-all": "^4.1.3",
+    "prettier-eslint-cli": "^4.7.1",
     "react": "^16.4.0"
   },
   "dependencies": {
