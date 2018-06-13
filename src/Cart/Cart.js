@@ -1,36 +1,34 @@
 import React from 'react'
+import numeral from 'numeral'
 import Button from '../Button'
 import { default as DefaultCartItem } from './CartItem'
 
 const identity = x => x
-const formatPrice = x => parseFloat(x).toFixed(2)
 const createSumReducer = (selector = identity) => (acc, curr) =>
   acc + selector(curr)
-const totalPriceReducer = createSumReducer(x => x.price)
+const totalPriceReducer = createSumReducer(x =>
+  numeral(x.price)
+    .multiply(x.amount)
+    .value()
+)
 const onContinue = () => alert('🎉🎉🎉')
 
 export default class Cart extends React.PureComponent {
-  state = {
-    items: {}
-  }
-
-  updateCartItem = item =>
-    this.setState(state => ({ items: { ...state.items, [item.id]: item } }))
-
   render() {
     const {
       View = 'div',
       Container = 'div',
       Text = 'p',
       CartItem = DefaultCartItem,
-      empty,
       cart,
+      updateCartItem,
       loading,
       disabled,
       style,
       ...otherProps
     } = this.props
 
+    const empty = !cart || !cart.items || !cart.items.length
     const total =
       cart && cart.items ? cart.items.reduce(totalPriceReducer, 0) : 0
     const cartItems =
@@ -39,10 +37,10 @@ export default class Cart extends React.PureComponent {
       cart.items.map((item, i) => (
         <CartItem
           key={i}
-          item={this.state.items[item.id] || item}
+          item={item}
           Text={Text}
           View={View}
-          updateCartItem={this.updateCartItem}
+          updateCartItem={updateCartItem}
         />
       ))
 
@@ -51,19 +49,12 @@ export default class Cart extends React.PureComponent {
     }
 
     return (
-      <View
-        {...otherProps}
-        style={[
-          styles.cartContainer,
-          { backgroundColor: empty ? '#ffffff' : '#ebebef' },
-          style
-        ]}
-      >
+      <View {...otherProps} style={[styles.cartContainer, style]}>
         {!empty && (
           <Container>
-            <Text style={styles.totalCost}>{`Total: ${formatPrice(
-              total
-            )}`}</Text>
+            <Text style={styles.totalCost}>
+              {`Total: ${numeral(total).format()}`}
+            </Text>
             <View style={styles.cartItems}>{cartItems}</View>
           </Container>
         )}

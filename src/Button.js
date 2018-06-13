@@ -1,5 +1,4 @@
 import React from 'react'
-import invariant from 'invariant'
 
 export default class Button extends React.PureComponent {
   render() {

@@ -28,9 +28,6 @@ exports[`Cart renders 1`] = `
         "flex": 1,
       },
       Object {
-        "backgroundColor": "#ebebef",
-      },
-      Object {
         "backgroundColor": "#770000",
         "border": "5px solid black",
         "borderRadius": 20,
@@ -55,7 +52,7 @@ exports[`Cart renders 1`] = `
         }
       }
     >
-      Total: 802.35
+      Total: R$4.196,85
     </p>
     <div
       style={
@@ -69,7 +66,7 @@ exports[`Cart renders 1`] = `
         <p>
           prod1
            - 
-          123.45
+          R$123,45
         </p>
         <p>
           lorem ipsum dolor flanders
@@ -93,7 +90,7 @@ exports[`Cart renders 1`] = `
         <p>
           prod2
            - 
-          678.9
+          R$4.073,40
         </p>
         <p>
           lorem ipsum dolor flanders
@@ -105,7 +102,7 @@ exports[`Cart renders 1`] = `
           -
         </button>
         <p>
-          2
+          6
         </p>
         <button
           onClick={[Function]}
