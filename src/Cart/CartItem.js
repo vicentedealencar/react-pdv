@@ -1,13 +1,14 @@
 import React from 'react'
 import numeral from 'numeral'
-import { default as DefaultUpdateCartItem } from './UpdateCartItem'
+import * as defaults from '../defaults'
 
 const CartItem = ({
   item,
-  Text = 'p',
-  View = 'div',
+  Text = defaults.Text,
+  View = defaults.View,
+  Button = defaults.Button,
   updateCartItem,
-  UpdateCartItem = DefaultUpdateCartItem,
+  UpdateCartItem = defaults.UpdateCartItem,
   ...otherProps
 }) => {
   const price = numeral(item.price)
@@ -20,7 +21,11 @@ const CartItem = ({
         {item.name} - {price}
       </Text>
       <Text>{item.description}</Text>
-      <UpdateCartItem item={item} updateCartItem={updateCartItem} />
+      <UpdateCartItem
+        item={item}
+        updateCartItem={updateCartItem}
+        Button={Button}
+      />
     </View>
   )
 }

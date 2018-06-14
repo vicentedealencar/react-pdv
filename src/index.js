@@ -1,3 +1,6 @@
+import * as defaults from './defaults'
+
+export const Defaults = defaults
 export { default as Button } from './Button'
 export { default as Cart } from './Cart'
 

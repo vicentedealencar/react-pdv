@@ -1,7 +1,6 @@
 import React from 'react'
 import numeral from 'numeral'
-import Button from '../Button'
-import { default as DefaultCartItem } from './CartItem'
+import * as defaults from '../defaults'
 
 const identity = x => x
 const createSumReducer = (selector = identity) => (acc, curr) =>
@@ -16,10 +15,11 @@ const onContinue = () => alert('🎉🎉🎉')
 export default class Cart extends React.PureComponent {
   render() {
     const {
-      View = 'div',
-      Container = 'div',
-      Text = 'p',
-      CartItem = DefaultCartItem,
+      View = defaults.View,
+      Container = defaults.Container,
+      Text = defaults.Text,
+      CartItem = defaults.CartItem,
+      Button = defaults.Button,
       cart,
       updateCartItem,
       loading,
@@ -58,7 +58,7 @@ export default class Cart extends React.PureComponent {
             <View style={styles.cartItems}>{cartItems}</View>
           </Container>
         )}
-        <Button component="button" style={style} onClick={onContinue}>
+        <Button style={style} onClick={onContinue}>
           Continue
         </Button>
       </View>

@@ -1,11 +1,11 @@
 import React from 'react'
-import { default as DefaultButton } from '../Button'
+import * as defaults from '../defaults'
 
 const updateCartItem = ({
   item,
   updateCartItem,
-  Button = DefaultButton,
-  Text = 'p',
+  Button = defaults.Button,
+  Text = defaults.Text,
   ...otherProps
 }) => {
   return updateCartItem ? (
