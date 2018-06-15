@@ -17,6 +17,7 @@ export default class Cart extends React.PureComponent {
       View = defaults.View,
       Container = defaults.Container,
       Text = defaults.Text,
+      Title = defaults.Text,
       CartItem = defaults.CartItem,
       Button = defaults.Button,
       SubmitButton = defaults.Button,
@@ -54,10 +55,8 @@ export default class Cart extends React.PureComponent {
       <View {...otherProps} style={[styles.cartContainer, style]}>
         {!empty && (
           <Container>
-            <Text style={styles.totalCost}>
-              {`Total: ${numeral(total).format()}`}
-            </Text>
-            <View style={styles.cartItems}>{cartItems}</View>
+            <Title>{numeral(total).format()}</Title>
+            <View>{cartItems}</View>
           </Container>
         )}
         <SubmitButton onClick={() => onSubmit(cart)} />
@@ -69,16 +68,5 @@ export default class Cart extends React.PureComponent {
 const styles = {
   cartContainer: {
     flex: 1
-  },
-  totalCost: {
-    marginTop: 30,
-    marginBottom: 30,
-    fontSize: 28,
-    fontWeight: '900',
-    alignSelf: 'center'
-  },
-  cartItems: {
-    borderBottomWidth: 4.5,
-    borderColor: '#d6d7da'
   }
 }

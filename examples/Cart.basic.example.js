@@ -3,9 +3,13 @@ import { Cart } from '../src'
 import Button from './Button.basic.example'
 
 const SubmitButton = props => (
-  <Button {...props} style={{ backgroundColor: '#007777' }}>
+  <Button {...props} style={{ backgroundColor: '#007777', marginTop: 20 }}>
     Comprar
   </Button>
+)
+
+const Title = ({ children, ...otherProps }) => (
+  <h2 {...otherProps}>{`Total: ${children}`}</h2>
 )
 
 const basicCart = {
@@ -45,6 +49,7 @@ export default class extends React.Component {
       <Cart
         cart={this.state.cart}
         updateCartItem={this.updateCartItem}
+        Title={Title}
         Button={Button}
         SubmitButton={SubmitButton}
         onSubmit={cart => alert(JSON.stringify(cart, null, 2))}

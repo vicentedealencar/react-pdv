@@ -2,7 +2,7 @@ export const View = 'div'
 
 export const Container = 'div'
 
-export const Text = 'p'
+export const Text = 'span'
 
 export const ButtonBase = 'button'
 

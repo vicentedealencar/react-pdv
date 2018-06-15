@@ -35,36 +35,62 @@ exports[`Cart renders 1`] = `
   }
 >
   <div>
-    <p
-      style={
-        Object {
-          "alignSelf": "center",
-          "fontSize": 28,
-          "fontWeight": "900",
-          "marginBottom": 30,
-          "marginTop": 30,
-        }
-      }
-    >
+    <h2>
       Total: R$4.196,85
-    </p>
-    <div
-      style={
-        Object {
-          "borderBottomWidth": 4.5,
-          "borderColor": "#d6d7da",
-        }
-      }
-    >
+    </h2>
+    <div>
       <div>
-        <p>
+        <button
+          disabled={false}
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
+        >
+          -
+        </button>
+        <span>
+          1
+        </span>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
+        >
+          +
+        </button>
+        <span>
           prod1
            - 
           R$123,45
-        </p>
-        <p>
-          lorem ipsum dolor flanders
-        </p>
+        </span>
+      </div>
+      <div>
         <button
           disabled={false}
           onClick={[Function]}
@@ -86,9 +112,9 @@ exports[`Cart renders 1`] = `
         >
           -
         </button>
-        <p>
-          1
-        </p>
+        <span>
+          6
+        </span>
         <button
           onClick={[Function]}
           style={
@@ -109,60 +135,11 @@ exports[`Cart renders 1`] = `
         >
           +
         </button>
-      </div>
-      <div>
-        <p>
+        <span>
           prod2
            - 
           R$4.073,40
-        </p>
-        <p>
-          lorem ipsum dolor flanders
-        </p>
-        <button
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#770077",
-              "borderColor": "black",
-              "borderRadius": 25,
-              "borderWidth": 5,
-              "color": "#fff",
-              "minHeight": 50,
-              "minWidth": 50,
-              "paddingBottom": 10,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 10,
-            }
-          }
-        >
-          -
-        </button>
-        <p>
-          6
-        </p>
-        <button
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#770077",
-              "borderColor": "black",
-              "borderRadius": 25,
-              "borderWidth": 5,
-              "color": "#fff",
-              "minHeight": 50,
-              "minWidth": 50,
-              "paddingBottom": 10,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 10,
-            }
-          }
-        >
-          +
-        </button>
+        </span>
       </div>
     </div>
   </div>
@@ -175,6 +152,7 @@ exports[`Cart renders 1`] = `
         "borderRadius": 25,
         "borderWidth": 5,
         "color": "#fff",
+        "marginTop": 20,
         "minHeight": 50,
         "minWidth": 50,
         "paddingBottom": 10,

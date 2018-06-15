@@ -17,16 +17,15 @@ const CartItem = ({
 
   return (
     <View {...otherProps}>
-      <Text>
-        {item.name} - {price}
-      </Text>
-      <Text>{item.description}</Text>
       <UpdateCartItem
         item={item}
         updateCartItem={updateCartItem}
         Button={Button}
         Text={Text}
       />
+      <Text>
+        {item.name} - {price}
+      </Text>
     </View>
   )
 }
