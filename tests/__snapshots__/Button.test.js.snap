@@ -23,7 +23,7 @@ exports[`BasicButton renders 1`] = `
 </button>
 `;
 
-exports[`Cart renders 1`] = `
+exports[`BasicCart renders 1`] = `
 <div
   style={
     Array [
@@ -50,6 +50,7 @@ exports[`Cart renders 1`] = `
               "borderRadius": 25,
               "borderWidth": 5,
               "color": "#fff",
+              "marginTop": 10,
               "minHeight": 50,
               "minWidth": 50,
               "paddingBottom": 10,
@@ -61,7 +62,15 @@ exports[`Cart renders 1`] = `
         >
           -
         </button>
-        <span>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
           1
         </span>
         <button
@@ -73,6 +82,7 @@ exports[`Cart renders 1`] = `
               "borderRadius": 25,
               "borderWidth": 5,
               "color": "#fff",
+              "marginTop": 10,
               "minHeight": 50,
               "minWidth": 50,
               "paddingBottom": 10,
@@ -84,7 +94,15 @@ exports[`Cart renders 1`] = `
         >
           +
         </button>
-        <span>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
           prod1
            - 
           R$123,45
@@ -101,6 +119,7 @@ exports[`Cart renders 1`] = `
               "borderRadius": 25,
               "borderWidth": 5,
               "color": "#fff",
+              "marginTop": 10,
               "minHeight": 50,
               "minWidth": 50,
               "paddingBottom": 10,
@@ -112,7 +131,15 @@ exports[`Cart renders 1`] = `
         >
           -
         </button>
-        <span>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
           6
         </span>
         <button
@@ -124,6 +151,7 @@ exports[`Cart renders 1`] = `
               "borderRadius": 25,
               "borderWidth": 5,
               "color": "#fff",
+              "marginTop": 10,
               "minHeight": 50,
               "minWidth": 50,
               "paddingBottom": 10,
@@ -135,7 +163,15 @@ exports[`Cart renders 1`] = `
         >
           +
         </button>
-        <span>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
           prod2
            - 
           R$4.073,40
@@ -152,7 +188,189 @@ exports[`Cart renders 1`] = `
         "borderRadius": 25,
         "borderWidth": 5,
         "color": "#fff",
-        "marginTop": 20,
+        "marginTop": 10,
+        "minHeight": 50,
+        "minWidth": 50,
+        "paddingBottom": 10,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 10,
+      }
+    }
+  >
+    Comprar
+  </button>
+</div>
+`;
+
+exports[`DropdownCart renders 1`] = `
+<div
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <div>
+    <h2>
+      Total: R$4.196,85
+    </h2>
+    <div>
+      <div>
+        <select
+          onChange={[Function]}
+          value={1}
+        >
+          <option
+            value={0}
+          >
+            0
+          </option>
+          <option
+            value={1}
+          >
+            1
+          </option>
+          <option
+            value={2}
+          >
+            2
+          </option>
+          <option
+            value={3}
+          >
+            3
+          </option>
+          <option
+            value={4}
+          >
+            4
+          </option>
+          <option
+            value={5}
+          >
+            5
+          </option>
+          <option
+            value={6}
+          >
+            6
+          </option>
+          <option
+            value={7}
+          >
+            7
+          </option>
+          <option
+            value={8}
+          >
+            8
+          </option>
+          <option
+            value={9}
+          >
+            9
+          </option>
+        </select>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
+          prod1
+           - 
+          R$123,45
+        </span>
+      </div>
+      <div>
+        <select
+          onChange={[Function]}
+          value={6}
+        >
+          <option
+            value={0}
+          >
+            0
+          </option>
+          <option
+            value={1}
+          >
+            1
+          </option>
+          <option
+            value={2}
+          >
+            2
+          </option>
+          <option
+            value={3}
+          >
+            3
+          </option>
+          <option
+            value={4}
+          >
+            4
+          </option>
+          <option
+            value={5}
+          >
+            5
+          </option>
+          <option
+            value={6}
+          >
+            6
+          </option>
+          <option
+            value={7}
+          >
+            7
+          </option>
+          <option
+            value={8}
+          >
+            8
+          </option>
+          <option
+            value={9}
+          >
+            9
+          </option>
+        </select>
+        <span
+          style={
+            Object {
+              "fontFamily": "monospace",
+              "marginLeft": 10,
+              "marginRight": 10,
+            }
+          }
+        >
+          prod2
+           - 
+          R$4.073,40
+        </span>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#007777",
+        "borderColor": "black",
+        "borderRadius": 25,
+        "borderWidth": 5,
+        "color": "#fff",
+        "marginTop": 10,
         "minHeight": 50,
         "minWidth": 50,
         "paddingBottom": 10,

@@ -24,6 +24,7 @@ export default class Cart extends React.PureComponent {
       onSubmit = console.log,
       cart,
       updateCartItem,
+      UpdateCartItem = defaults.UpdateCartItem,
       loading,
       disabled,
       style,
@@ -44,6 +45,7 @@ export default class Cart extends React.PureComponent {
           View={View}
           Button={Button}
           updateCartItem={updateCartItem}
+          UpdateCartItem={UpdateCartItem}
         />
       ))
 

@@ -2,13 +2,34 @@ import React from 'react'
 import { Cart } from '../src'
 import Button from './Button.basic.example'
 
-const SubmitButton = props => (
-  <Button {...props} style={{ backgroundColor: '#007777', marginTop: 20 }}>
-    Comprar
-  </Button>
+const RegularButton = ({ style, ...otherProps }) => (
+  <Button {...otherProps} style={{ marginTop: 10, ...style }} />
 )
 
-const Title = ({ children, ...otherProps }) => (
+const SubmitButton = ({ style, ...otherProps }) => (
+  <RegularButton
+    {...otherProps}
+    style={{ backgroundColor: '#007777', ...style }}
+  >
+    Comprar
+  </RegularButton>
+)
+
+const MonoText = ({ style, ...otherProps }) => {
+  return (
+    <span
+      style={{
+        fontFamily: 'monospace',
+        marginLeft: 10,
+        marginRight: 10,
+        ...style
+      }}
+      {...otherProps}
+    />
+  )
+}
+
+const H2Total = ({ children, ...otherProps }) => (
   <h2 {...otherProps}>{`Total: ${children}`}</h2>
 )
 
@@ -49,10 +70,12 @@ export default class extends React.Component {
       <Cart
         cart={this.state.cart}
         updateCartItem={this.updateCartItem}
-        Title={Title}
-        Button={Button}
+        Title={H2Total}
+        Text={MonoText}
+        Button={RegularButton}
         SubmitButton={SubmitButton}
         onSubmit={cart => alert(JSON.stringify(cart, null, 2))}
+        {...this.props}
       />
     )
   }

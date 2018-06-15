@@ -6,7 +6,8 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
-    format: 'iife'
+    format: 'iife',
+    sourcemap: true
   },
   plugins: [
     babel({
@@ -29,6 +30,5 @@ export default {
       jsnext: true,
       main: true
     })
-  ],
-  sourcemap: true
+  ]
 }
