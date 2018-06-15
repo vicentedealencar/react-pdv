@@ -305,6 +305,14 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@types/estree@0.0.39":
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+
+"@types/node@*":
+  version "10.3.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.3.tgz#8798d9e39af2fa604f715ee6a6b19796528e46c3"
+
 "@webassemblyjs/ast@1.5.10":
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.10.tgz#7f1e81149ca4e103c9e7cc321ea0dcb83a392512"
@@ -1037,6 +1045,12 @@ babel-plugin-emotion@^9.1.2:
     mkdirp "^0.5.1"
     source-map "^0.5.7"
     touch "^1.0.0"
+
+babel-plugin-external-helpers@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-external-helpers/-/babel-plugin-external-helpers-6.22.0.tgz#2285f48b02bd5dede85175caf8c62e86adccefa1"
+  dependencies:
+    babel-runtime "^6.22.0"
 
 babel-plugin-istanbul@^4.1.6:
   version "4.1.6"
@@ -1808,6 +1822,10 @@ buffer@^5.0.3:
 builtin-modules@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
+
+builtin-modules@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-2.0.0.tgz#60b7ef5ae6546bd7deefa74b08b62a43a232648e"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
@@ -3146,6 +3164,14 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
+estree-walker@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
+
+estree-walker@^0.5.1, estree-walker@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
+
 esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
@@ -4436,6 +4462,10 @@ is-lower-case@^1.1.0:
   resolved "https://registry.yarnpkg.com/is-lower-case/-/is-lower-case-1.1.3.tgz#7e147be4768dc466db3bfb21cc60b31e6ad69393"
   dependencies:
     lower-case "^1.1.0"
+
+is-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
 
 is-npm@^1.0.0:
   version "1.0.0"
@@ -7150,7 +7180,7 @@ resolve@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.3.3, resolve@^1.5.0, resolve@^1.6.0:
+resolve@^1.1.6, resolve@^1.3.3, resolve@^1.5.0, resolve@^1.6.0:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:
@@ -7198,6 +7228,50 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rollup-plugin-babel@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-3.0.4.tgz#41b3e762fe64450dd61da3105a2cf7ad76be4edc"
+  dependencies:
+    rollup-pluginutils "^1.5.0"
+
+rollup-plugin-commonjs@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.1.3.tgz#37bfbf341292ea14f512438a56df8f9ca3ba4d67"
+  dependencies:
+    estree-walker "^0.5.1"
+    magic-string "^0.22.4"
+    resolve "^1.5.0"
+    rollup-pluginutils "^2.0.1"
+
+rollup-plugin-node-resolve@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz#c26d110a36812cbefa7ce117cadcd3439aa1c713"
+  dependencies:
+    builtin-modules "^2.0.0"
+    is-module "^1.0.0"
+    resolve "^1.1.6"
+
+rollup-pluginutils@^1.5.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
+  dependencies:
+    estree-walker "^0.2.1"
+    minimatch "^3.0.2"
+
+rollup-pluginutils@^2.0.1:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.3.0.tgz#478ace04bd7f6da2e724356ca798214884738fc4"
+  dependencies:
+    estree-walker "^0.5.2"
+    micromatch "^2.3.11"
+
+rollup@^0.60.7:
+  version "0.60.7"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.60.7.tgz#2b62ef9306f719b1ab85a7814b3e6596ac51fae8"
+  dependencies:
+    "@types/estree" "0.0.39"
+    "@types/node" "*"
 
 rsvp@^3.3.3:
   version "3.6.2"
