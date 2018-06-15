@@ -6,41 +6,29 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
-    format: 'cjs'
+    format: 'iife'
   },
   plugins: [
-    resolve({
-      jsnext: true,
-      main: true
-    }),
     babel({
       babelrc: false,
       // TODO: extend pkg.babel
       // import pkg from './package.json'
       // pkg.babel === { presets: [ 'react', 'env' ], plugins: [ 'transform-class-properties', 'transform-object-rest-spread' ] }
-      presets: [
-        'react',
-        [
-          'env',
-          {
-            'modules': false
-          }
-        ]
-      ],
+      presets: ['react', ['env', { modules: false }]],
+      exclude: 'node_modules/**', // only transpile our source code
       plugins: [
         'external-helpers',
         'transform-class-properties',
         'transform-object-rest-spread'
-      ],
-      exclude: 'node_modules/**' // only transpile our source code
+      ]
     }),
     commonjs({
-        // namedExports: {
-        //   // left-hand side can be an absolute path, a path
-        //   // relative to the current directory, or the name
-        //   // of a module in node_modules
-        //   'numeral': [ 'default' ]
-        // }
+      include: ['node_modules/react/**', 'node_modules/numeral/**']
+    }),
+    resolve({
+      jsnext: true,
+      main: true
     })
-  ]
+  ],
+  sourcemap: true
 }
