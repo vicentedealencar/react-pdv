@@ -13,12 +13,12 @@
     "build:babel": "babel ./src -d dist",
     "build:dev": "cross-env NODE_ENV=development yarn build:babel --watch",
     "build:prod": "cross-env NODE_ENV=production yarn build:babel",
-    "prepublish": "npm-run-all --serial pre-commit build:prod",
+    "prepublish": "npm-run-all --serial test:format build:prod",
     "format": "prettier-eslint --write **/*.js !**/dist/**",
     "test": "jest --notify --colors",
     "test:update": "yarn test --updateSnapshot",
     "test:bail": "yarn test --bail",
-    "pre-commit": "npm-run-all --serial format test:bail"
+    "test:format": "npm-run-all --serial test:bail format"
   },
   "keywords": [],
   "author": "",
@@ -29,12 +29,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pre-commit"
+      "pre-push": "yarn test:format"
     }
   },
   "babel": {
     "presets": [
-      "react-app"
+      "react",
+      "env"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
     ]
   },
   "prettier": {
@@ -50,12 +55,16 @@
     "@compositor/kit-snapshot": "^1.0.24",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
-    "babel-preset-react-app": "^3.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "chokidar-cli": "^1.2.0",
     "cross-env": "^5.1.6",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^1.0.0-rc.8",
     "jest": "^23.1.0",
