@@ -1,7 +1,7 @@
 import React from 'react'
 import * as defaults from '../defaults'
 
-const updateCartItem = ({
+const UpdateCartItem = ({
   item,
   updateCartItem,
   Button = defaults.Button,
@@ -30,4 +30,4 @@ const updateCartItem = ({
   )
 }
 
-export default updateCartItem
+export default UpdateCartItem

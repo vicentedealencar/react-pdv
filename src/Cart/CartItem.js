@@ -25,6 +25,7 @@ const CartItem = ({
         item={item}
         updateCartItem={updateCartItem}
         Button={Button}
+        Text={Text}
       />
     </View>
   )

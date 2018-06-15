@@ -1,21 +1,30 @@
 import React from 'react'
 import { Button } from '../src'
 
-const onClick = () => alert('🎉🎉🎉')
+const defaultText = 'Basic button'
+const defaultOnClick = () => alert('🎉🎉🎉')
 
-export default props => (
-  <Button component="button" style={style} onClick={onClick}>
-    I am a button, please click me
+export default ({
+  style,
+  children = defaultText,
+  onClick = defaultOnClick,
+  ...otherProps
+}) => (
+  <Button {...otherProps} onClick={onClick} style={{ ...basicStyle, ...style }}>
+    {children}
   </Button>
 )
 
-const style = {
+const basicStyle = {
   backgroundColor: '#770077',
   color: '#fff',
   paddingTop: 10,
   paddingBottom: 10,
-  paddingRight: 100,
-  paddingLeft: 100,
-  border: '5px solid black',
-  borderRadius: 20
+  paddingRight: 15,
+  paddingLeft: 15,
+  minHeight: 50,
+  minWidth: 50,
+  borderColor: 'black',
+  borderWidth: 5,
+  borderRadius: 25
 }

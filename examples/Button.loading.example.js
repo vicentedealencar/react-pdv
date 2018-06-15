@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button } from '../src'
+import Button from './Button.basic.example'
 import { State } from '@compositor/kit'
+
 const onClick = (update, i) => () => {
   update({ loading: true })
   setTimeout(() => {
@@ -14,7 +15,6 @@ export default () => (
     i={0}
     render={({ update, loading, i }) => (
       <Button
-        component="button"
         onClick={onClick(update, i)}
         loading={loading}
         style={loading ? disabledStyle : regularStyle}
@@ -26,19 +26,11 @@ export default () => (
 )
 
 const regularStyle = {
-  backgroundColor: '#770077',
-  color: '#fff',
-  paddingTop: 10,
-  paddingBottom: 10,
-  width: 300,
-  textAlign: 'center',
-  border: '5px solid black',
-  borderRadius: 20
+  backgroundColor: '#000077',
+  width: 300
 }
 
 const disabledStyle = {
   ...regularStyle,
-  ...{
-    backgroundColor: '#777'
-  }
+  backgroundColor: '#777'
 }

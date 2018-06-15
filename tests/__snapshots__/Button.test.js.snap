@@ -6,17 +6,20 @@ exports[`BasicButton renders 1`] = `
   style={
     Object {
       "backgroundColor": "#770077",
-      "border": "5px solid black",
-      "borderRadius": 20,
+      "borderColor": "black",
+      "borderRadius": 25,
+      "borderWidth": 5,
       "color": "#fff",
+      "minHeight": 50,
+      "minWidth": 50,
       "paddingBottom": 10,
-      "paddingLeft": 100,
-      "paddingRight": 100,
+      "paddingLeft": 15,
+      "paddingRight": 15,
       "paddingTop": 10,
     }
   }
 >
-  I am a button, please click me
+  Basic button
 </button>
 `;
 
@@ -27,16 +30,7 @@ exports[`Cart renders 1`] = `
       Object {
         "flex": 1,
       },
-      Object {
-        "backgroundColor": "#770000",
-        "border": "5px solid black",
-        "borderRadius": 20,
-        "color": "#fff",
-        "paddingBottom": 10,
-        "paddingLeft": 100,
-        "paddingRight": 100,
-        "paddingTop": 10,
-      },
+      undefined,
     ]
   }
 >
@@ -74,6 +68,21 @@ exports[`Cart renders 1`] = `
         <button
           disabled={false}
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
         >
           -
         </button>
@@ -82,6 +91,21 @@ exports[`Cart renders 1`] = `
         </p>
         <button
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
         >
           +
         </button>
@@ -98,6 +122,21 @@ exports[`Cart renders 1`] = `
         <button
           disabled={false}
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
         >
           -
         </button>
@@ -106,6 +145,21 @@ exports[`Cart renders 1`] = `
         </p>
         <button
           onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#770077",
+              "borderColor": "black",
+              "borderRadius": 25,
+              "borderWidth": 5,
+              "color": "#fff",
+              "minHeight": 50,
+              "minWidth": 50,
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 10,
+            }
+          }
         >
           +
         </button>
@@ -116,18 +170,21 @@ exports[`Cart renders 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#770000",
-        "border": "5px solid black",
-        "borderRadius": 20,
+        "backgroundColor": "#007777",
+        "borderColor": "black",
+        "borderRadius": 25,
+        "borderWidth": 5,
         "color": "#fff",
+        "minHeight": 50,
+        "minWidth": 50,
         "paddingBottom": 10,
-        "paddingLeft": 100,
-        "paddingRight": 100,
+        "paddingLeft": 15,
+        "paddingRight": 15,
         "paddingTop": 10,
       }
     }
   >
-    Continue
+    Comprar
   </button>
 </div>
 `;
@@ -137,13 +194,17 @@ exports[`LoadingButton renders 1`] = `
   onClick={[Function]}
   style={
     Object {
-      "backgroundColor": "#770077",
-      "border": "5px solid black",
-      "borderRadius": 20,
+      "backgroundColor": "#000077",
+      "borderColor": "black",
+      "borderRadius": 25,
+      "borderWidth": 5,
       "color": "#fff",
+      "minHeight": 50,
+      "minWidth": 50,
       "paddingBottom": 10,
+      "paddingLeft": 15,
+      "paddingRight": 15,
       "paddingTop": 10,
-      "textAlign": "center",
       "width": 300,
     }
   }

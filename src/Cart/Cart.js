@@ -10,7 +10,6 @@ const totalPriceReducer = createSumReducer(x =>
     .multiply(x.amount)
     .value()
 )
-const onContinue = () => alert('🎉🎉🎉')
 
 export default class Cart extends React.PureComponent {
   render() {
@@ -20,6 +19,8 @@ export default class Cart extends React.PureComponent {
       Text = defaults.Text,
       CartItem = defaults.CartItem,
       Button = defaults.Button,
+      SubmitButton = defaults.Button,
+      onSubmit = console.log,
       cart,
       updateCartItem,
       loading,
@@ -30,7 +31,7 @@ export default class Cart extends React.PureComponent {
 
     const empty = !cart || !cart.items || !cart.items.length
     const total =
-      cart && cart.items ? cart.items.reduce(totalPriceReducer, 0) : 0
+      cart && !cart.items ? 0 : cart.items.reduce(totalPriceReducer, 0)
     const cartItems =
       cart &&
       cart.items &&
@@ -40,6 +41,7 @@ export default class Cart extends React.PureComponent {
           item={item}
           Text={Text}
           View={View}
+          Button={Button}
           updateCartItem={updateCartItem}
         />
       ))
@@ -58,9 +60,7 @@ export default class Cart extends React.PureComponent {
             <View style={styles.cartItems}>{cartItems}</View>
           </Container>
         )}
-        <Button style={style} onClick={onContinue}>
-          Continue
-        </Button>
+        <SubmitButton onClick={() => onSubmit(cart)} />
       </View>
     )
   }

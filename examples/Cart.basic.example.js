@@ -1,5 +1,12 @@
 import React from 'react'
 import { Cart } from '../src'
+import Button from './Button.basic.example'
+
+const SubmitButton = props => (
+  <Button {...props} style={{ backgroundColor: '#007777' }}>
+    Comprar
+  </Button>
+)
 
 const basicCart = {
   items: [
@@ -34,20 +41,14 @@ export default class extends React.Component {
     }))
 
   render() {
-    const { cart } = this.state
     return (
-      <Cart cart={cart} style={style} updateCartItem={this.updateCartItem} />
+      <Cart
+        cart={this.state.cart}
+        updateCartItem={this.updateCartItem}
+        Button={Button}
+        SubmitButton={SubmitButton}
+        onSubmit={cart => alert(JSON.stringify(cart, null, 2))}
+      />
     )
   }
-}
-
-const style = {
-  backgroundColor: '#770000',
-  color: '#fff',
-  paddingTop: 10,
-  paddingBottom: 10,
-  paddingRight: 100,
-  paddingLeft: 100,
-  border: '5px solid black',
-  borderRadius: 20
 }
