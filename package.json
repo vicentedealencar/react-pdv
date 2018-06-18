@@ -1,9 +1,8 @@
 {
   "name": "react-pdv",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "main": "dist/index.js",
-  "module": "src/index.js",
   "scripts": {
     "start": "npm-run-all --parallel start:*",
     "start:examples": "cross-env NODE_ENV=development kit examples --mode library --port 5757 --open",
