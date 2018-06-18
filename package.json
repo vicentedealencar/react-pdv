@@ -1,6 +1,6 @@
 {
   "name": "react-pdv",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -10,7 +10,7 @@
     "start:examples:wait": "wait-on http-get://localhost:5757/",
     "start:dev": "npm-run-all --serial start:examples:wait start:dev:watch",
     "start:dev:watch": "chokidar \"**/*.js\" -i \"**/dist/**\" -i \"**/node_modules/**\" --initial --debounce 120000 -c \"npm-run-all --serial format test\"",
-    "build": "yarn build:prod:babel",
+    "build": "yarn build:rollup",
     "build:clean": "rimraf ./dist/*",
     "build:babel": "babel src -d dist",
     "build:dev": "cross-env NODE_ENV=development yarn build:babel",
