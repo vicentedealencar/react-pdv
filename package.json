@@ -1,6 +1,6 @@
 {
   "name": "react-pdv",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -37,16 +37,6 @@
     "hooks": {
       "pre-push": "yarn test:format"
     }
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "env"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
   },
   "prettier": {
     "proseWrap": "never",
