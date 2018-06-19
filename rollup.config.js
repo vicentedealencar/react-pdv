@@ -3,18 +3,21 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 
 export default {
-  input: './src/index.js',
+  input: 'src/index.js',
   output: {
-    file: './dist/index.js',
+    file: 'dist/index.js',
     format: 'cjs',
     sourcemap: true
   },
+  external: ['react'],
   plugins: [
+    resolve({
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
+    }),
     babel({
       babelrc: false,
-      // TODO: extend pkg.babel
-      // import pkg from './package.json'
-      // pkg.babel === { presets: [ 'react', 'env' ], plugins: [ 'transform-class-properties', 'transform-object-rest-spread' ] }
       presets: ['react', ['env', { modules: false }]],
       exclude: 'node_modules/**', // only transpile our source code
       plugins: [
@@ -25,10 +28,6 @@ export default {
     }),
     commonjs({
       include: ['node_modules/react/**', 'node_modules/numeral/**']
-    }),
-    resolve({
-      // jsnext: true,
-      main: true
     })
   ]
 }
