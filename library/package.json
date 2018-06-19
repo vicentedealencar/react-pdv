@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "library",
+  "description": "Kit + x0",
+  "scripts": {
+    "start": "x0 dev App.js",
+    "format": "prettier --write *.js"
+  },
+  "devDependencies": {
+    "@compositor/x0": "^4.0.2",
+    "@mdx-js/loader": "^0.9.0",
+    "@mdx-js/mdx": "^0.9.0",
+    "prettier": "^1.12.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "x0": {
+    "config": "x0.config.js"
+  },
+  "dependencies": {
+    "@compositor/kit": "^1.0.20",
+    "standard-components": "^1.0.0-2"
+  },
+  "version": "1.0.0"
+}
