@@ -1,13 +1,14 @@
 {
   "name": "react-pdv",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "start": "kit ./library/examples/ --mode library",
-    "build": "cross-env NODE_ENV=production rollup -c",
+    "build": "babel src -d dist",
+    "old-build": "cross-env NODE_ENV=production rollup -c",
     "prepare": "yarn build",
     "now-start": "cross-env NODE_ENV=production x0 dev library/App.js --port 5757",
     "deploy": "now",
@@ -35,6 +36,12 @@
     "singleQuote": true,
     "semi": false
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|react|react-pdv)/)",
+      "**/*.test.js"
+    ]
+  },
   "x0": {
     "config": "library/x0.config.js"
   },
@@ -45,6 +52,7 @@
     "@compositor/kit-cli": "^1.0.37",
     "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.0.8",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
