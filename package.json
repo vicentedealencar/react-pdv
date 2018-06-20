@@ -1,30 +1,22 @@
 {
   "name": "react-pdv",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "start": "npm-run-all --parallel start:*",
+    "start": "kit ./library/examples/ --mode library",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "prepare": "yarn build",
     "now-start": "cross-env NODE_ENV=production x0 dev library/App.js --port 5757",
-    "start:examples": "cross-env NODE_ENV=development x0 dev library/App.js --port 5757 --open",
-    "start:examples:deploy": "now",
-    "start:examples:wait": "wait-on http-get://localhost:5757/",
-    "start:dev": "npm-run-all --serial start:examples:wait start:dev:watch",
-    "start:dev:watch": "chokidar \"**/*.js\" -i \"**/dist/**\" -i \"**/node_modules/**\" --initial --debounce 120000 -c \"npm-run-all --serial format test\"",
-    "build": "yarn build:rollup",
-    "build:clean": "rimraf ./dist/*",
-    "build:babel": "babel src -d dist",
-    "build:dev": "cross-env NODE_ENV=development yarn build:babel",
-    "build:dev:watch": "yarn build:dev --watch",
-    "build:prod:babel": "cross-env NODE_ENV=production yarn build:babel",
-    "build:rollup": "rollup -c",
-    "build:prod:rollup": "cross-env NODE_ENV=production yarn build:rollup",
-    "prepublishOnly": "npm-run-all --serial build:clean build",
-    "format": "prettier-eslint --write **/*.js !**/dist/**",
+    "deploy": "now",
     "test": "jest --notify --colors",
     "test:update": "yarn test --updateSnapshot",
     "test:bail": "yarn test --bail",
-    "test:format": "npm-run-all --serial test:bail format"
+    "test:format": "npm-run-all --serial test format",
+    "format": "prettier-eslint --write **/*.js !**/dist/**",
+    "clean": "rimraf ./dist/*"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +35,9 @@
     "singleQuote": true,
     "semi": false
   },
+  "x0": {
+    "config": "library/x0.config.js"
+  },
   "peerDependencies": {
     "react": "*"
   },
@@ -50,14 +45,12 @@
     "@compositor/kit-cli": "^1.0.37",
     "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.0.8",
-    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "chokidar-cli": "^1.2.0",
     "cross-env": "^5.1.6",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -74,10 +67,10 @@
     "rollup": "^0.60.7",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "wait-on": "^2.1.0"
+    "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "numeral": "^2.0.6"
+    "numeral": "^2.0.6",
+    "rollup-plugin-peer-deps-external": "^2.1.1"
   }
 }
