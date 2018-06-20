@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cart } from '../../src'
+import { Cart } from 'react-pdv'
 import Button from './Button.basic.example'
 
 const RegularButton = ({ style, ...otherProps }) => (

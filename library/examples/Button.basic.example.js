@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../../src'
+import { Button } from 'react-pdv'
 
 const defaultText = 'Basic button'
 const defaultOnClick = () => alert('🎉🎉🎉')
