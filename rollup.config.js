@@ -39,12 +39,11 @@ export default {
       ],
       exclude: 'node_modules/**'
     }),
-    resolve(),
-    //   {
-    //   customResolveOptions: {
-    //     moduleDirectory: 'node_modules'
-    //   }
-    // }
+    resolve({
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
+    }),
     commonjs({
       include: ['node_modules/react/**', 'node_modules/numeral/**']
     })
