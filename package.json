@@ -1,10 +1,10 @@
 {
   "name": "react-pdv",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "jsnext:main": "dist/es/index.es.js",
   "scripts": {
     "start": "kit ./library/examples/ --mode library",
     "prepare": "npm-run-all --serial clean build",
@@ -29,6 +29,10 @@
     "type": "git",
     "url": "https://github.com/vicentedealencar/react-pdv.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "husky": {
     "hooks": {
       "pre-push": "yarn test:format"
