@@ -1,10 +1,10 @@
 import React from 'react'
-import * as defaults from './defaults'
+import { Defaults } from './index'
 
 export default class Button extends React.PureComponent {
   render() {
     const {
-      component: B = defaults.ButtonBase,
+      BaseButton: B = Defaults.ButtonBase,
       loading,
       disabled,
       ...otherProps

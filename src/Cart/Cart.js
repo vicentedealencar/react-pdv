@@ -1,6 +1,6 @@
 import React from 'react'
 import numeral from 'numeral'
-import * as defaults from '../defaults'
+import { Defaults } from '../index'
 
 const identity = x => x
 const createSumReducer = (selector = identity) => (acc, curr) =>
@@ -14,17 +14,17 @@ const totalPriceReducer = createSumReducer(x =>
 export default class Cart extends React.PureComponent {
   render() {
     const {
-      View = defaults.View,
-      Container = defaults.Container,
-      Text = defaults.Text,
-      Title = defaults.Text,
-      CartItem = defaults.CartItem,
-      Button = defaults.Button,
-      SubmitButton = defaults.Button,
+      View = Defaults.View,
+      Container = Defaults.Container,
+      Text = Defaults.Text,
+      Title = Defaults.Text,
+      CartItem = Defaults.CartItem,
+      Button = Defaults.Button,
+      SubmitButton = Defaults.Button,
       onSubmit = console.log,
       cart,
       updateCartItem,
-      UpdateCartItem = defaults.UpdateCartItem,
+      UpdateCartItem = Defaults.UpdateCartItem,
       loading,
       disabled,
       style,
