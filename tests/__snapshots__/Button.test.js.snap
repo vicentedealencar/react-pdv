@@ -18,6 +18,7 @@ exports[`BasicButton renders 1`] = `
       "paddingTop": 10,
     }
   }
+  title="Basic button"
 >
   Basic button
 </button>
@@ -59,6 +60,7 @@ exports[`BasicCart renders 1`] = `
               "paddingTop": 10,
             }
           }
+          title="-"
         >
           -
         </button>
@@ -91,6 +93,7 @@ exports[`BasicCart renders 1`] = `
               "paddingTop": 10,
             }
           }
+          title="+"
         >
           +
         </button>
@@ -128,6 +131,7 @@ exports[`BasicCart renders 1`] = `
               "paddingTop": 10,
             }
           }
+          title="-"
         >
           -
         </button>
@@ -160,6 +164,7 @@ exports[`BasicCart renders 1`] = `
               "paddingTop": 10,
             }
           }
+          title="+"
         >
           +
         </button>
@@ -197,6 +202,7 @@ exports[`BasicCart renders 1`] = `
         "paddingTop": 10,
       }
     }
+    title="Comprar"
   >
     Comprar
   </button>
@@ -379,6 +385,7 @@ exports[`DropdownCart renders 1`] = `
         "paddingTop": 10,
       }
     }
+    title="Comprar"
   >
     Comprar
   </button>
@@ -404,6 +411,7 @@ exports[`LoadingButton renders 1`] = `
       "width": 300,
     }
   }
+  title="Delayed counter: 0"
 >
   Delayed counter: 0
 </button>

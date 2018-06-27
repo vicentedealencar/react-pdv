@@ -4,14 +4,19 @@ import { Defaults } from './index'
 export default class Button extends React.PureComponent {
   render() {
     const {
-      BaseButton: B = Defaults.ButtonBase,
+      BaseButton: B = Defaults.BaseButton,
       loading,
       disabled,
+      title,
       ...otherProps
     } = this.props
 
     return (
-      <B {...otherProps} disabled={loading || disabled}>
+      <B
+        {...otherProps}
+        title={title || this.props.children || ''}
+        disabled={loading || disabled}
+      >
         {this.props.children}
       </B>
     )
