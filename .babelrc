@@ -5,5 +5,34 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread"
-  ]
+  ],
+  "env": {
+    "commonjs": {
+      "presets": [
+        ["env", { "loose": true }]
+      ]
+    },
+    "es": {
+      "presets": [
+        ["env", { "modules": false, "loose": true }]
+      ]
+    },
+    "rollup": {
+      "presets": [
+        ["env", { "modules": false, "loose": true }]
+      ],
+      "plugins": [
+        "external-helpers"
+      ]
+    },
+    "testing": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      ]
+    }
+  }
 }

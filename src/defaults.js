@@ -4,7 +4,7 @@ export const Container = 'div'
 
 export const Text = 'span'
 
-export const ButtonBase = 'button'
+export const BaseButton = 'button'
 
 export { default as Button } from './Button'
 
