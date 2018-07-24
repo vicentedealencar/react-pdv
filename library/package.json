@@ -1,26 +1,26 @@
 {
   "private": true,
-  "name": "library",
-  "description": "Kit + x0",
+  "name": "react-pdv-library",
+  "description": "react-pdv component library",
   "scripts": {
-    "start": "x0 dev App.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "format": "prettier --write *.js"
   },
   "devDependencies": {
-    "@compositor/x0": "^4.0.2",
-    "@mdx-js/loader": "^0.9.0",
-    "@mdx-js/mdx": "^0.9.0",
-    "prettier": "^1.12.1"
+    "prettier": "^1.12.1",
+    "react-scripts": "^1.1.4"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
-  "x0": {
-    "config": "x0.config.js"
-  },
   "dependencies": {
-    "@compositor/kit": "^1.0.20",
+    "@compositor/kit": "^1.0.47",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-pdv": "file:..",
     "standard-components": "^1.0.0-2"
   },
