@@ -1,84 +1,26 @@
 {
-  "name": "react-pdv",
-  "version": "0.1.3",
-  "description": "",
-  "main": "dist/lib/index.js",
-  "module": "dist/es/index.js",
-  "jsnext:main": "dist/es/index.es.js",
-  "scripts": {
-    "start": "kit ./library/examples/ --mode library",
-    "prepare": "npm-run-all --serial clean build",
-    "prepublish": "npm-run-all --serial test",
-    "build": "npm-run-all --serial build:**",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir dist/lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir dist/es",
-    "build:umd": "cross-env BABEL_ENV=rollup NODE_ENV=development rollup -c -o dist/react-pdv.js",
-    "build:umd:min": "cross-env BABEL_ENV=rollup NODE_ENV=production rollup -c -o dist/react-pdv.min.js",
-    "now-start": "cross-env NODE_ENV=production x0 dev library/App.js --port 5757",
-    "deploy": "now",
-    "test": "cross-env BABEL_ENV=testing jest --notify --colors",
-    "test:update": "yarn test --updateSnapshot",
-    "test:bail": "yarn test --bail",
-    "test:format": "npm-run-all --serial test format",
-    "format": "prettier-eslint --write **/*.js !**/dist/**",
-    "clean": "rimraf ./dist/*"
-  },
-  "keywords": [],
-  "author": "",
+  "name": "@react-pdv/root",
+  "version": "1.0.0",
+  "description": "React component library for cross-platform offline applications",
+  "main": "index.js",
+  "repository": "https://github.com/vicentedealencar/react-pdv",
+  "author": "Vicente de Alencar <vicentedealencar@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vicentedealencar/react-pdv.git"
-  },
-  "files": [
-    "dist",
-    "src"
+  "private": true,
+  "workspaces": [
+    "main",
+    "library"
   ],
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test:format"
-    }
-  },
-  "prettier": {
-    "proseWrap": "never",
-    "singleQuote": true,
-    "semi": false
-  },
-  "peerDependencies": {
-    "react": "*"
+  "scripts": {
+    "start": "yarn workspace react-pdv-library start",
+    "build": "yarn workspace react-pdv build",
+    "build:cjs": "yarn workspace react-pdv build:commonjs",
+    "test": "npm-run-all --serial build test:library",
+    "test:watch": "npm-run-all --parallel build:cjs test:library --watch",
+    "howto:test:library": "yarn test:library --rootDir=$(pwd)",
+    "test:library": "yarn workspace react-pdv-library test --modulePaths=library --modulePaths=main --testMatch=**/*.test.js"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.37",
-    "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^6.0.3",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-react": "^6.24.1",
-    "cross-env": "^5.1.6",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-react": "^6.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react": "^7.9.1",
-    "husky": "^1.0.0-rc.8",
-    "jest": "^23.1.0",
-    "npm-run-all": "^4.1.3",
-    "prettier-eslint-cli": "^4.7.1",
-    "react": "^16.4.0",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.63.4",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^4.0.0"
-  },
-  "dependencies": {
-    "numeral": "^2.0.6"
+    "npm-run-all": "^4.1.3"
   }
 }

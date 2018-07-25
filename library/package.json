@@ -21,7 +21,7 @@
     "@compositor/kit": "^1.0.47",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-pdv": "file:..",
+    "react-pdv": "0.1.4",
     "standard-components": "^1.0.0-2"
   },
   "version": "1.0.0"

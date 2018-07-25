@@ -24,15 +24,6 @@
       "plugins": [
         "external-helpers"
       ]
-    },
-    "testing": {
-      "presets": [
-        ["env", {
-          "targets": {
-            "node": "current"
-          }
-        }]
-      ]
     }
   }
 }
