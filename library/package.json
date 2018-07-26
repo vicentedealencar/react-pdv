@@ -1,28 +1,19 @@
 {
-  "private": true,
   "name": "react-pdv-library",
   "description": "react-pdv component library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write *.js"
-  },
-  "devDependencies": {
-    "prettier": "^1.12.1",
-    "react-scripts": "^1.1.4"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "start": "next",
+    "build": "next build",
+    "now-start": "next start"
   },
   "dependencies": {
     "@compositor/kit": "^1.0.47",
+    "next": "4",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-pdv": "0.1.4",
-    "standard-components": "^1.0.0-2"
-  },
-  "version": "1.0.0"
+    "react-dom": "^16.4.1"
+  }
 }

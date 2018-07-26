@@ -6,7 +6,7 @@ export default class Button extends React.PureComponent {
     const {
       BaseButton: B = Defaults.BaseButton,
       loading,
-      disabled,
+      disabled = false,
       title,
       ...otherProps
     } = this.props

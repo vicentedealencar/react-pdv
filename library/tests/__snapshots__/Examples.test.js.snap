@@ -2,7 +2,7 @@
 
 exports[`BasicButton renders 1`] = `
 <button
-  disabled={undefined}
+  disabled={false}
   onClick={[Function]}
   style={
     Object {
@@ -77,7 +77,7 @@ exports[`BasicCart renders 1`] = `
           1
         </span>
         <button
-          disabled={undefined}
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -149,7 +149,7 @@ exports[`BasicCart renders 1`] = `
           6
         </span>
         <button
-          disabled={undefined}
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
@@ -188,7 +188,7 @@ exports[`BasicCart renders 1`] = `
     </div>
   </div>
   <button
-    disabled={undefined}
+    disabled={false}
     onClick={[Function]}
     style={
       Object {
@@ -372,7 +372,7 @@ exports[`DropdownCart renders 1`] = `
     </div>
   </div>
   <button
-    disabled={undefined}
+    disabled={false}
     onClick={[Function]}
     style={
       Object {
@@ -399,7 +399,7 @@ exports[`DropdownCart renders 1`] = `
 
 exports[`LoadingButton renders 1`] = `
 <button
-  disabled={undefined}
+  disabled={false}
   onClick={[Function]}
   style={
     Object {

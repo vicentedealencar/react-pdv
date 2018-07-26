@@ -1,5 +1,5 @@
 {
-  "name": "@react-pdv/root",
+  "name": "react-pdv-root",
   "version": "1.0.0",
   "description": "React component library for cross-platform offline applications",
   "main": "index.js",
@@ -12,12 +12,16 @@
     "library"
   ],
   "scripts": {
-    "start": "yarn workspace react-pdv-library start",
+    "start": "npm-run-all --parallel build:watch start:library",
+    "start:library": "yarn workspace react-pdv-library start",
     "build": "yarn workspace react-pdv build",
-    "test": "bash -c 'yarn test:library --rootDir=${1-.}' -- $(pwd)",
-    "test:library": "yarn workspace react-pdv-library test --modulePaths=library --modulePaths=main --testMatch=**/*.test.js"
+    "build:cjs": "yarn workspace react-pdv build:commonjs",
+    "build:watch": "yarn build:cjs --watch",
+    "test": "cross-env BABEL_ENV=testing jest --notify --colors --testMatch=**/*.test.js"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
+    "jest": "^23.4.1",
     "npm-run-all": "^4.1.3"
   }
 }
