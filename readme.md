@@ -8,7 +8,11 @@ React component library for point of sale
 git clone https://github.com/vicentedealencar/react-pdv
 cd react-pdv
 yarn
-yarn start
+
+# on different terminals
+yarn build:watch
+yarn start:library
+yarn test:watch
 ```
 
 ### Linking
