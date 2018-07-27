@@ -1,36 +1,36 @@
 import React from 'react'
-import numeral from 'numeral'
-import { Defaults } from '../index'
+import format from '../format'
+import withComponents from '../withComponents'
 
 const identity = x => x
 const createSumReducer = (selector = identity) => (acc, curr) =>
   acc + selector(curr)
-const totalPriceReducer = createSumReducer(x =>
-  numeral(x.price)
-    .multiply(x.amount)
-    .value()
-)
+const totalPriceReducer = createSumReducer(x => x.price * x.amount)
 
-export default class Cart extends React.PureComponent {
+class Cart extends React.PureComponent {
   render() {
     const {
-      View = Defaults.View,
-      Container = Defaults.Container,
-      Text = Defaults.Text,
-      Title = Defaults.Text,
-      CartItem = Defaults.CartItem,
-      Button = Defaults.Button,
-      SubmitButton = Defaults.Button,
       onSubmit = console.log,
       cart,
       updateCartItem,
-      UpdateCartItem = Defaults.UpdateCartItem,
       loading,
       disabled,
       style,
+      components,
       ...otherProps
     } = this.props
 
+    const {
+      View,
+      Container,
+      Text,
+      Title,
+      CartItem,
+      Button,
+      SubmitButton,
+      UpdateCartItem
+    } = components
+    
     const empty = !cart || !cart.items || !cart.items.length
     const total =
       cart && !cart.items ? 0 : cart.items.reduce(totalPriceReducer, 0)
@@ -41,11 +41,8 @@ export default class Cart extends React.PureComponent {
         <CartItem
           key={i}
           item={item}
-          Text={Text}
-          View={View}
-          Button={Button}
+          components={components}
           updateCartItem={updateCartItem}
-          UpdateCartItem={UpdateCartItem}
         />
       ))
 
@@ -54,10 +51,10 @@ export default class Cart extends React.PureComponent {
     }
 
     return (
-      <View {...otherProps} style={[styles.cartContainer, style]}>
+      <View {...otherProps} style={[styles.cartContainer].concat(style)}>
         {!empty && (
           <Container>
-            <Title>{numeral(total).format()}</Title>
+            <Title>{format(total)}</Title>
             <View>{cartItems}</View>
           </Container>
         )}
@@ -72,3 +69,5 @@ const styles = {
     flex: 1
   }
 }
+
+export default withComponents(Cart)

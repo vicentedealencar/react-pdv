@@ -1,24 +1,27 @@
 import React from 'react'
-import { Defaults } from './index'
+import withComponents from './withComponents'
 
-export default class Button extends React.PureComponent {
+class Button extends React.PureComponent {
   render() {
     const {
-      BaseButton: B = Defaults.BaseButton,
       loading,
       disabled = false,
       title,
+      components,
       ...otherProps
     } = this.props
+    const { BaseButton } = components
 
     return (
-      <B
+      <BaseButton
         {...otherProps}
         title={title || this.props.children || ''}
         disabled={loading || disabled}
       >
         {this.props.children}
-      </B>
+      </BaseButton>
     )
   }
 }
+
+export default withComponents(Button)

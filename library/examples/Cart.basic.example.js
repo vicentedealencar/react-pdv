@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cart } from 'react-pdv'
+import { Cart, PdvProvider } from 'react-pdv'
 import Button from './Button.basic.example'
 
 const RegularButton = ({ style, ...otherProps }) => (
@@ -66,17 +66,23 @@ export default class extends React.Component {
     }))
 
   render() {
+    const { components, ...props } = this.props
+    const passedComponents = {
+      Title: H2Total,
+      Text: MonoText,
+      Button: RegularButton,
+      SubmitButton: SubmitButton,
+      ...components
+    }
     return (
-      <Cart
-        cart={this.state.cart}
-        updateCartItem={this.updateCartItem}
-        Title={H2Total}
-        Text={MonoText}
-        Button={RegularButton}
-        SubmitButton={SubmitButton}
-        onSubmit={cart => alert(JSON.stringify(cart, null, 2))}
-        {...this.props}
-      />
+      <PdvProvider components={passedComponents}>
+        <Cart
+          cart={this.state.cart}
+          updateCartItem={this.updateCartItem}
+          onSubmit={cart => alert(JSON.stringify(cart, null, 2))}
+          {...props}
+        />
+      </PdvProvider>
     )
   }
 }

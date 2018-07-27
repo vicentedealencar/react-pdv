@@ -1,27 +1,18 @@
 import React from 'react'
-import numeral from 'numeral'
-import { Defaults } from '../index'
+import format from '../format'
+import withComponents from '../withComponents'
 
-const CartItem = ({
-  item,
-  Text = Defaults.Text,
-  View = Defaults.View,
-  Button = Defaults.Button,
-  updateCartItem,
-  UpdateCartItem = Defaults.UpdateCartItem,
-  ...otherProps
-}) => {
-  const price = numeral(item.price)
-    .multiply(item.amount)
-    .format()
+const CartItem = ({ item, updateCartItem, components, ...otherProps }) => {
+  const { Text, View, Button, UpdateCartItem } = components
+
+  const price = format(item.price * item.amount)
 
   return (
     <View {...otherProps}>
       <UpdateCartItem
         item={item}
         updateCartItem={updateCartItem}
-        Button={Button}
-        Text={Text}
+        components={components}
       />
       <Text>
         {item.name} - {price}
@@ -30,4 +21,4 @@ const CartItem = ({
   )
 }
 
-export default CartItem
+export default withComponents(CartItem)

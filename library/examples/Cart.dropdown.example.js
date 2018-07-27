@@ -21,6 +21,7 @@ const DropdownUpdateCartItem = ({ item, updateCartItem, ...otherProps }) => {
 
 export default class extends React.Component {
   render() {
-    return <BasicCart UpdateCartItem={DropdownUpdateCartItem} />
+    const components = { UpdateCartItem: DropdownUpdateCartItem}
+    return <BasicCart components={components} />
   }
 }

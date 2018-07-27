@@ -1,17 +1,11 @@
 import React from 'react'
-import { Defaults } from '../index'
+import withComponents from '../withComponents'
 
-const UpdateCartItem = ({
-  item,
-  updateCartItem,
-  Button = Defaults.Button,
-  Text = Defaults.Text,
-  ...otherProps
-}) => {
+const UpdateCartItem = ({ item, updateCartItem, components }) => {
+  const { Button, Text } = components
   return updateCartItem ? (
     <React.Fragment>
       <Button
-        {...otherProps}
         disabled={item.amount <= 0}
         onClick={() => updateCartItem({ ...item, amount: item.amount - 1 })}
       >
@@ -19,7 +13,6 @@ const UpdateCartItem = ({
       </Button>
       <Text>{item.amount}</Text>
       <Button
-        {...otherProps}
         onClick={() => updateCartItem({ ...item, amount: item.amount + 1 })}
       >
         +
@@ -30,4 +23,4 @@ const UpdateCartItem = ({
   )
 }
 
-export default UpdateCartItem
+export default withComponents(UpdateCartItem)

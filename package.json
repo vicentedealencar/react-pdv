@@ -12,11 +12,12 @@
     "library"
   ],
   "scripts": {
-    "start": "npm-run-all --parallel build:watch start:library",
+    "start": "npm-run-all --parallel build:es start:library",
     "start:library": "yarn workspace react-pdv-library start",
     "build": "yarn workspace react-pdv build",
+    "build:es": "yarn workspace react-pdv build:es --watch",
     "build:cjs": "yarn workspace react-pdv build:commonjs",
-    "build:watch": "yarn build:cjs --watch",
+    "test:watch": "npm-run-all --parallel build:cjs test --watch",
     "test": "cross-env BABEL_ENV=testing jest --notify --colors --testMatch=**/*.test.js"
   },
   "devDependencies": {

@@ -1,13 +1,29 @@
-export const View = 'div'
+import Button from './Button'
 
-export const Container = 'div'
+import UpdateCartItem from './Cart/UpdateCartItem'
 
-export const Text = 'span'
+import CartItem from './Cart/CartItem'
 
-export const BaseButton = 'button'
+const View = 'div'
 
-export { default as Button } from './Button'
+const Container = 'div'
 
-export { default as UpdateCartItem } from './Cart/UpdateCartItem'
+const Text = 'span'
 
-export { default as CartItem } from './Cart/CartItem'
+const BaseButton = 'button'
+
+const SafeButton = Button || BaseButton
+
+const SubmitButton = SafeButton
+
+export default {
+  View,
+  Container,
+  Text,
+  BaseButton,
+  Button: SafeButton,
+  UpdateCartItem,
+  CartItem,
+  Title: Text,
+  SubmitButton
+}
