@@ -9,9 +9,10 @@ git clone https://github.com/vicentedealencar/react-pdv
 cd react-pdv
 yarn
 
-# on different terminals
-yarn build:watch
-yarn start:library
+# run examples
+yarn start
+
+# run tests continuously
 yarn test:watch
 ```
 
@@ -47,7 +48,7 @@ When you're done run `yarn unlink` on the library folder.
 
 ### Publishing
 
-Use the standard `yarn publish` command to release a new version of your library. This will ask you the new version to release, commit the new `package.json` version and create a tag.
+Use `yarn workspace react-pdv publish` command to release a new version of your library. This will ask you the new version to release, commit the new `package.json` version and create a tag.
 
 ## License
 
